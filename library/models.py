@@ -43,7 +43,7 @@ class User(models.Model):
 
 class HistoryOfRenting(models.Model):
     book = models.ForeignKey('Book', on_delete=models.SET_NULL, null=True)
-    author = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
-    date_of_rent = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
+    date_of_rent = models.DateTimeField(auto_now=True)
     date_of_return = models.DateTimeField(blank=True, null=True)
 
